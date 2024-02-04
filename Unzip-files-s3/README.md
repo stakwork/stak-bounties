@@ -58,10 +58,10 @@
             {
               "s3": {
                 "bucket": {
-                  "name": "splitters-pdfs"
+                  "name": "YOUR-BUCKET-NAME"
                 },
                 "object": {
-                  "key": "test_batch1.zip"
+                  "key": "YOUR-FOLDER-NAME"
                 }
               }
             }
