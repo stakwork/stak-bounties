@@ -20,7 +20,16 @@ def clean_filename(filename):
     """
     Cleans the filename to be URL-friendly.
     """
-    return re.sub(r'[~ñé]', '', filename)
+    # Replace spaces and other characters with dashes
+    filename = re.sub(r"[^a-zA-Z0-9._-]", "-", filename)
+
+    # Convert to lowercase to standardize
+    filename = filename.lower()
+
+    # Remove consecutive dashes
+    filename = re.sub(r"-+", "-", filename)
+
+    return filename
 
 def upload_file(bucket_name, object_key, file_data):
     """
